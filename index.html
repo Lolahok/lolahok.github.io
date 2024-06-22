@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/234/234016.png">
+  <title>Super serach</title>
+  <style>
+    /* Reset default browser styles */
+    * {
+      font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    hr {
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>cam and model search</h1>
+  <input style="height: 23px; font-size: larger;" class="domain" id="domain" oninput="updateSearchQuery()" size="50" value="ZoeNiickels"></input><select style="display: none; font-size: large; margin-left: 25px;height: 30px;width: 72px;" name="site" id="site" onchange="updateSearchQuery()()">
+    <option style="color: #FBBC05; background-color: #4285F4;" value="Google">Google</option>
+    <option style="color: #235FAF; background-color: #02B7E9;" value="Bing">Bing</option>
+    <option style="color: #FC3F1D; background-color: #000000;" value="Yandex">Yandex</option>
+    <option style="color: #6000D3;" value="Yahoo">Yahoo</option>
+  </select>
+  <br><br>
+  <h1>Tools</h1>
+  <div class="results" id="tools"></div>
+  <br>
+  <h1>Fromse</h1>
+  <div class="results" id="forums"></div>
+  <br>
+  <h1>Super Model</h1>
+  <div class="results" id="supermodel"></div>
+  <br>
+  <h1>cam model</h1>
+  <div class="results" id="cammodel"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+<!-- style of footer -->
+  <footer id="footer" style="background-color: #f8f9fa; text-align: center; padding: 10px; box-shadow: 0 -2px 5px rgba(24, 28, 218, 0.1); position: fixed; bottom: -100px; width: 100%; transition: bottom 0.3s;">
+    <p style="margin: 0; color: #2b333a;">&copy; Power by *****</p>
+</footer>
+
+<script>
+    document.addEventListener('scroll', function() {
+        const footer = document.getElementById('footer');
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            footer.style.bottom = '0';
+        } else {
+            footer.style.bottom = '-100px';
+        }
+    });
+</script>
+
+  <script>
+    function updateSearchQuery() {
+        var domain = document.getElementById('domain').value.trim();
+
+        var Aways = [
+        'https://camgirlfinder.net/models?m=' + domain,
+        'https://recu.me/performer/' + domain,
+
+      ];
+
+      var Apos = {
+        1:'Search models by name',
+        2:'Recurbate',
+      }
+
+      var Aicone = {
+        1:'https://camgirlfinder.net/static/icon.png',
+        2:'https://s3-storage.shoppy.gg/shoppy-gg/product_images/Y62pZTFuEF4uIbq8716YX2MhrX8J8rNXxV7Pndf0.jpg',
+      }
+
+
+      var Aorums = document.getElementById('tools');
+      Aorums.innerHTML = '';
+      Anum=1;
+      Aways.forEach(function (Away) {
+      var Alink = encodeURIComponent(Away);
+      var AlinkElement = document.createElement('a');
+      var Alable = document.createElement('lable');
+      var Aicon = document.createElement('img');
+      AlinkElement.href = Away;
+      AlinkElement.target = '_blank';
+      AlinkElement.textContent = Away;
+      Aicon.src = Aicone[Anum];
+      Aicon.style.height="40px";
+      Aicon.style.width="40px";
+      Alable.textContent = Apos[Anum];
+      Alable.style.color="#2254d5";
+      Alable.style.fontSize= "x-large";
+      AlinkElement.style.fontSize= "larger";
+      Aorums.appendChild(document.createElement('br'));
+      Aorums.appendChild(Aicon);
+      Aorums.appendChild(document.createElement('br'));
+      Aorums.appendChild(Alable);
+      Aorums.appendChild(document.createElement('br'));
+      Aorums.appendChild(AlinkElement);
+
+      Aorums.appendChild(document.createElement('br'));
+      Anum = Anum+1;
+    })
+
+
+        
+     var Fways = [
+        'https://forums.socialmediagirls.com/search/?q=' + domain,
+        'https://simpcity.su/search/?q=' + domain,
+        'https://nudostar.com/forum/search/?q='+domain,
+        'https://camrecs.org/search/?q=' + domain,
+        'https://nobodyhome.tv/search.php?action=do_search&postthread=1&keywords='+domain,
+        'https://forum.phun.org/search/?q='+domain,
+        'https://titsintops.com/phpBB2/index.php?search/&q='+domain,
+        'http://www.nudecelebforum.com/search/?q='+domain,
+        'https://forum.xnxx.com/search/?q='+domain,
+        'https://sexyforums.com/search/?q='+domain,
+        'https://www.lpsg.com/search/?q='+domain,
+        'https://www.phica.eu/forums/search/?q='+domain,
+
+      ];
+
+      var Fpos = {
+        1:'forums.socialmediagirls.com',
+        2:'simpcity.su',
+        3:'nudostar.com',
+        4:'camrecs.org',
+        5:'nobodyhome.tv',
+        6:'forum.phun.org',
+        7:'titsintops.com',
+        8:'nudecelebforum.com',
+        9:'forum.xnxx.com',
+        10:'sexyforums.com',
+        11:'lpsg.com',
+        12:'phica.eu',
+      }
+
+      var Ficone = {
+        1:'https://forums.socialmediagirls.com/styles/uix_dark/images/12favicon.png',
+        2:'https://simpcity.su/styles/simpcityclassiccyanblack/basic/uix_logoSmall.png',
+        3:'https://nudostar.com/favicon.ico',
+        4:'https://camrecs.org/styles/default/xenforo/xenforo-logo.png',
+        5:'https://nobodyhome.tv/favicon-32x32.png',
+        6:'https://forum.phun.org/favicon.ico',
+        7:'https://titsintops.com/phpBB2/styles/default/xenforo/favicon-32x32.png',
+        8:'http://www.nudecelebforum.com/data/assets/logo/headersmall.jpg',
+        9:'https://forum.xnxx.com/styles/logo.png',
+        10:'https://sexyforums.com/data/assets/logo/126.png',
+        11:'https://www.lpsg.com/styles/lpsg/lpsg/favicon-32x32.png',
+        12:'https://www.phica.eu/favico/android-icon-192x192.png',
+      }
+
+
+      var Forums = document.getElementById('forums');
+      Forums.innerHTML = '';
+      Fnum=1;
+      Fways.forEach(function (Fway) {
+      var Flink = encodeURIComponent(Fway);
+      var FlinkElement = document.createElement('a');
+      var Flable = document.createElement('lable');
+      var Ficon = document.createElement('img');
+      FlinkElement.href = Fway;
+      FlinkElement.target = '_blank';
+      FlinkElement.textContent = Fway;
+      Ficon.src = Ficone[Fnum];
+      Ficon.style.height="40px";
+      Ficon.style.width="40px";
+      Flable.textContent = Fpos[Fnum];
+      Flable.style.color="#2254d5";
+      Flable.style.fontSize= "x-large";
+      FlinkElement.style.fontSize= "larger";
+      Forums.appendChild(document.createElement('br'));
+      Forums.appendChild(Ficon);
+      Forums.appendChild(document.createElement('br'));
+      Forums.appendChild(Flable);
+      Forums.appendChild(document.createElement('br'));
+      Forums.appendChild(FlinkElement);
+
+      Forums.appendChild(document.createElement('br'));
+      Fnum = Fnum+1;
+    })
+
+      var Sways = [
+        'https://sorrymother.to/?s=' + domain,
+        'https://www.reddit.com/search/?q=' + domain,
+        'https://influencersgonewild.com/?s=' + domain,
+        'https://bitchesgirls.com/search/' + domain + '/',
+        'https://onlyfinder.com/' + domain + '-onlyfans/profiles/',
+        'https://fanslyleaked.com/?s=' + domain,
+        'https://prothots.com/?s=' + domain,
+        'https://leakedzone.com/search?search=' + domain,
+        'https://groupsorlink.com/onlyfans/search?q=' + domain + '&engine=1',
+        'https://nudostar.com/search/' + domain + '/',
+        'https://fapfappy.com/?s=' + domain,
+        'https://nudostar.tv/models/' + domain + '/',
+        'https://www.virtualmodelschool.com/?search=' + domain,
+        'https://fapfolder.club/search/' + domain,
+        'https://en.paradisehill.cc/search/?pattern=' + domain,
+        'https://www.adultdvdempire.com/allsearch/search?q=' + domain,
+        'https://coomer.su/artists#' + domain,
+        'https://sgpics.net/?s=' + domain,
+        'https://criollasx.com/?s=' + domain,
+        'https://internetchicks.to/?s=' + domain,
+        'https://talkmenudes.com/?s=' + domain,
+        'https://fanscout.com/reviews/' + domain,
+        'https://pervypals.com/?s=' + domain,
+        'https://www.watchmynudes.com/models/' + domain + '/',
+        'https://www.hottystop.com/search/' + domain + '/',
+        'https://www.sexiezpix.com/alen/' + domain + '.htm',
+        'https://www.poringa.net/buscar/?&q=' + domain,
+        'https://viper.to/search.php?searchid=273997653#' + domain,
+        'https://porncoven.com/search.php?searchid=5051612#' + domain,
+
+      ];
+
+      var Spos = {
+        1:'sorrymother',
+        2:'reddit.com',
+        3:'influencersgonewild.com',
+        4:'bitchesgirls.com',
+        5:'onlyfinder.com',
+        6:'fanslyleaked.com',
+        7:'prothots.com',
+        8:'leakedzone.com',
+        9:'groupsorlink.com',
+        10:'nudostar.com',
+        11:'fapfappy.com',
+        12:'nudostar.tv',
+        13:'virtualmodelschool.com',
+        14:'fapfolder.club',
+        15:'paradisehill.cc - search for pornstars',
+        16:'adultdvdempire.com- search for pornstars',
+        17:'coomer.su 🔥',
+        18:'sgpics.net- suicide girls search 🔥',
+        19:'criollasx.com',
+        20:'internetchicks.to',
+        21:'talkmenudes.com',
+        22:'fanscout.com - search IN ALL platforms🔥',
+        23:'pervypals.com',
+        24:'watchmynudes.com',
+        25:'hottystop.com',
+        26:'sexiezpix.com',
+        27:'poringa.net',
+        28:'viper.to',
+        29:'porncoven.com',
+      }
+
+      var Sicone = {
+        1:'https://sorrymother.to/wp-content/uploads/2023/02/sorrymother02.png',
+        2:'https://www.redditstatic.com/shreddit/assets/favicon/128x128.png',
+        3:'https://influencersgonewild.com/wp-content/uploads/2024/01/cropped-ig-favicon-32x32.png',
+        4:'https://bitchesgirls.com/favicon.ico',
+        5:'https://onlyfinder.com/static/search-sm-pink.webp',
+        6:'https://fanslyleaked.com/wp-content/uploads/2023/02/logo-2048x572.png',
+        7:'https://prothots.com/wp-content/uploads/2019/06/favicon.ico',
+        8:'https://image-cdn.leakedzone.com/asset/images/leakedzone_com.png',
+        9:'https://groupsorlink.com/onlyfans/favicon.ico',
+        10:'https://nudostar.com/favicon.ico',
+        11:'https://fapfappy.com/wp-content/uploads/2021/02/cropped-37323-9-pink-heart-32x32.png',
+        12:'https://nudostar.tv/static/fav/favicon.ico',
+        13:'https://www.virtualmodelschool.com/vms-logo5.png',
+        14:'https://fapfolder.club/content/themes/default/images/favicon2.webp',
+        15:'https://en.paradisehill.cc/img/favicon/favicon.ico',
+        16:'https://imgs1cdn.adultempire.com/bn/favico_ae_32x32.png',
+        17:'https://coomer.su/static/favicon.ico',
+        18:'https://pbs.twimg.com/profile_images/825800256822575107/7Rc_K_tm_400x400.jpg',
+        19:'https://criollasx.com/wp-content/uploads/2023/09/cropped-see-no-evil-monkey_1f648-1-32x32.png',
+        20:'https://internetchicks.to/wp-content/uploads/2024/06/cropped-download-32x32.png',
+        21:'https://talkmenudes.com/wp-content/uploads/2023/12/cropped-TalkMeNudes-Favicon-150x150.jpg',
+        22:'https://fanscout.com/assets/favicon-32x32.png',
+        23:'https://pervypals.com/wp-content/uploads/2021/02/scrnli_2_13_2021_3-56-26-PM.png',
+        24:'https://content5.watchmynudes.com/images/watchmynudes.com/favicon.ico',
+        25:'https://www.hottystop.com/favicon.ico',
+        26:'https://www.sexiezpix.com/themes/images/favicon.svg',
+        27:'https://s2.poringa.net/images/favicon.ico?1.2',
+        28:'https://viper.to/favicon.ico',
+        29:'https://porncoven.com/favicon-32x32.png',
+
+      }
+
+
+      var supermodel = document.getElementById('supermodel');
+      supermodel.innerHTML = '';
+      Snum=1;
+      Sways.forEach(function (Sway) {
+      var Slink = encodeURIComponent(Sway);
+      var SlinkElement = document.createElement('a');
+      var Slable = document.createElement('lable');
+      var Sicon = document.createElement('img');
+      SlinkElement.href = Sway;
+      SlinkElement.target = '_blank';
+      SlinkElement.textContent = Sway;
+      Sicon.src = Sicone[Snum];
+      Sicon.style.height="40px";
+      Sicon.style.width="40px";
+      Slable.textContent = Spos[Snum];
+      Slable.style.color="#2254d5";
+      Slable.style.fontSize= "x-large";
+      SlinkElement.style.fontSize= "larger";
+      supermodel.appendChild(document.createElement('br'));
+      supermodel.appendChild(Sicon);
+      supermodel.appendChild(document.createElement('br'));
+      supermodel.appendChild(Slable);
+      supermodel.appendChild(document.createElement('br'));
+      supermodel.appendChild(SlinkElement);
+
+      supermodel.appendChild(document.createElement('br'));
+      Snum = Snum+1;
+    })
+
+
+
+      var ways = [
+        'https://www.erome.com/search?q=' + domain,
+        'https://freefans.tv/index.php?do=search&story=' + domain,
+        'https://cam69.com/?search=' + domain,
+        'https://www.cambro.tv/search/'+ domain +'/',
+        'https://www.masturbationgirl.com/search/' + domain + '/',
+        'https://camdownload.net/search/' + domain + '/',
+        'https://tyler-brown.com/video/' + domain,
+        'https://xgirls.webcam/search/' + domain + '/',
+        'https://www.camwhoria.com/search/' + domain + '/',
+        'https://camwhores.club/search/' + domain + '/',
+        'https://bestcam.tv/search?search=' + domain,
+        'https://www.camwhores.tv/search/' + domain + '/',
+        'https://camstreams.tv/search/' + domain + '/',
+        'https://xhomealone.com/search/' + domain + '/',
+        'https://www.socialmediagirls.com/?s=' + domain,
+        'https://camslib.com/search/video?query=' + domain,
+        'https://www.onscreens.me/search?q=' + domain,
+        'https://stream-leak.com/search/' + domain + '/',
+        'https://thothub.is/search/' + domain + '/',
+        'https://chaturflix.cam/performer/' + domain,
+        'https://nudespree.com/search/' + domain + '/',
+        'https://www.sexysluts.tv/search/' + domain + '/',
+        'https://someonesister.com/search/' + domain + '/',
+        'https://www.camhub.cc/search/' + domain + '/',
+        'http://camvideos.me/search/' + domain,
+        'https://www.webpussi.com/search/' + domain + '/',
+        'https://www.showcamrips.com/model/en/' + domain + '/',
+        'https://www.alphavids.cc/search/' + domain + '/',
+        'https://archivebate.com/profile/' + domain,
+        'https://www.tnaflix.com/search?what=' + domain,
+        'https://camchickscaps.com/?s=' + domain,
+        'http://www.shufflesex.com/search/' + domain,
+        'https://en.vidmo.pro/search.php?q=' + domain,
+        'https://xloveit.com/?s=' + domain,
+        'https://redxxx.cc/r/' + domain,
+        'https://noodlemagazine.com/video/' + domain,
+        'https://www.camwhorescloud.com/search/' + domain + '/',
+        'https://tik.pm/?s=' + domain,
+        'https://143porn.com/search/' + domain + '/',
+        'https://jav.red/?s=' + domain,
+        'https://www.redd.tube/search/' + domain,
+        'https://javpornvideos.xyz/?s=' + domain,
+        'https://xxxadulttorrent.org/search/' + domain,
+        'https://www.twpornstars.com/hashtag/' + domain,
+        'https://www.jizzoncam.com/search/' + domain + '/',
+        'https://fapcam.tv/search?q=' + domain,
+        'https://curbate.tv/search?q=' + domain,
+        'https://www.camshowsrecorded.com/model/' + domain + '/page/1',
+        'https://camseek.tv/search/' + domain + '/',
+        'https://rec-tube.com/search/' + domain + '/',
+        'https://wcleak.com/?s=' + domain,
+        'https://fyptt.to/?s=' + domain,
+        'https://spankbang.com/s/' + domain + '/',
+        
+
+      ];
+
+      var pos = {
+        1:'erome.com',
+        2:'freefans.tv',
+        3:'cam69.com',
+        4:'cambro.tv',
+        5:'masturbationgirl.com',
+        6:'camdownload.net',
+        7:'tyler-brown.com',
+        8:'xgirls.webcam',
+        9:'camwhoria.com',
+        10:'camwhores.club',
+        11:'bestcam.tv',
+        12:'camwhores.tv',
+        13:'camstreams.tv',
+        14:'xhomealone.com',
+        15:'socialmediagirls.com',
+        16:'camslib.com',
+        17:'onscreens.me',
+        18:'stream-leak.com',
+        19:'thothub.is',
+        20:'chaturflix.cam',
+        21:'nudespree.com',
+        22:'sexysluts.tv',
+        23:'someonesister.com',
+        24:'camhub.cc',
+        25:'camvideos.me',
+        26:'webpussi.com',
+        27:'showcamrips.com',
+        28:'alphavids.cc',
+        29:'archivebate.com',
+        30:'tnaflix.com',
+        31:'camchickscaps.com',
+        32:'shufflesex.com',
+        33:'vidmo.pro',
+        34:'xloveit.com: Turkish-live',
+        35:'redxxx.cc',
+        36:'noodlemagazine.com',
+        37:'camwhorescloud.com',
+        38:'tik.pm - TIKTOK video',
+        39:'143porn.com',
+        40:'jav.red - Asian porn long movies',
+        41:'redd.tube',
+        42:'javpornvideos.xyz - japones Porn video',
+        43:'xxxadulttorrent.org',
+        44:'twpornstars.com',
+        45:'jizzoncam.com',
+        46:'fapcam.tv',
+        47:'curbate.tv',
+        48:'camshowsrecorded.com',
+        49:'camseek.tv',
+        50:'rec-tube.com',
+        51:'wcleak.com',
+        52:'fyptt.to',
+        53:'spankbang.com',
+      }
+
+      var icone = {
+          1:'https://www.erome.com/img/logo-erome-horizontal.png?v=3',
+          2:'https://freefans.tv/templates/videok2s/images/favicon/favicon.ico',
+          3:'https://cam69.com/site/base/front/images/logo.png',
+          4:'https://www.cambro.tv/images/logo.svg',
+          5:'https://www.masturbationgirl.com/static/images/logo.png',
+          6:'https://camdownload.net/templates/sexo/images/favicon.png?3',
+          7:'https://tyler-brown.com/static/extend/light/favicon.ico',
+          8:'https://xgirls.webcam/favicon.ico',
+          9:'https://www.camwhoria.com/favicon.ico',
+          10:'https://camwhores.club/favicon.ico',
+          11:'https://bestcam.tv/favicon/favicon.ico',
+          12:'https://www.camwhores.tv/favicon.ico',
+          13:'https://camstreams.tv/favicon.ico',
+          14:'https://xhomealone.com/favicon.ico',
+          15:'https://www.socialmediagirls.com/wp-content/uploads/2023/10/favicon-150x150.png',
+          16:'https://static.camslib.com/logo/logo-desktop.svg',
+          17:'https://www.onscreens.me/_astro/onscreens.me.ff611eda.svg',
+          18:'https://stream-leak.com/contents/hcjnjdrajonv/theme/logo.png',
+          19:'https://thothub.is/static/images/logo1colo2r.png',
+          20:'https://chaturflix.cam/logo.png',
+          21:'https://nudespree.com/static/images/nudespree.png?v2',
+          22:'https://www.sexysluts.tv/static/images/logo2.png',
+          23:'https://someonesister.com/static/images/logo.png',
+          24:'https://www.camhub.cc/contents/other/theme/logo.png',
+          25:'http://camvideos.me/img/camvideos/logo.png',
+          26:'https://www.webpussi.com/images/logo.png',
+          27:'https://www.xrisi.com/styles_cam/favicon.ico',
+          28:'https://alphavids.cc/static/images/logo.png',
+          29:'https://archivebate.com/logo/app.ico',
+          30:'https://www.tnaflix.com//assets/img/favicon/tnaflix/favicon.ico',
+          31:'',
+          32:'http://www.shufflesex.com/images/logos/SHUFFLESEX.png',
+          33:'https://en.vidmo.pro/static/images/logo_vidmo_240.png',
+          34:'https://xloveit.com/wp-content/uploads/2023/07/twitter-logo.jpg',
+          35:'https://redxxx.cc/images/menu.gif',
+          36:'https://noodlemagazine.com/static/extend/dark/favicon.ico',
+          37:'https://www.camwhorescloud.com/favicon.ico',
+          38:'https://tik.pm/wp-content/uploads/2023/06/Tik.pm-logo.png',
+          39:'https://143porn.com/contents/ypcnlovuedqu/theme/logo.png',
+          40:'https://jav.red/wp-content/uploads/2023/05/jav-red-play.png',
+          41:'https://cdntube.b-cdn.net/favicon/favicon-32x32.png',
+          42:'https://javpornvideos.xyz/wp-content/uploads/2023/02/cropped-Copy-of-vpnanon-32x32.png',
+          43:'https://s.xxxadulttorrent.org/logo.png',
+          44:'https://www.twpornstars.com/favicon.ico',
+          45:'https://www.jizzoncam.com/favicon.ico',
+          46:'https://fapcam.tv/logo.jpg',
+          47:'https://curbate.tv/favicon/favicon-32x32.png',
+          48:'https://www.camshowsrecorded.com/favicon.ico',
+          49:'https://camseek.tv/favicon.ico',
+          50:'https://rec-tube.com/favicon.ico',
+          51:'https://wcleak.com/wp-content/uploads/logo-2.svg',
+          52:'https://fyptt.to/wp-content/uploads/2020/04/fypttlogo.png',
+          53:'https://assets.sb-cd.com/static/desktop/Images/logo_desktop_v4@2x.png',
+        }
+
+        var cammodel = document.getElementById('cammodel');
+      cammodel.innerHTML = '';
+      num=1;
+      ways.forEach(function (way) {
+      var link = encodeURIComponent(way);
+      var linkElement = document.createElement('a');
+      var lable = document.createElement('lable');
+      var icon = document.createElement('img');
+      linkElement.href = way;
+      linkElement.target = '_blank';
+      linkElement.textContent = way;
+      icon.src = icone[num];
+      lable.textContent = pos[num];
+      icon.style.height="40px";
+      //icon.style.width="100px";
+      lable.style.color="#2254d5";
+      lable.style.fontSize= "x-large";
+      linkElement.style.fontSize= "larger";
+      cammodel.appendChild(document.createElement('br'));
+      cammodel.appendChild(icon);
+      cammodel.appendChild(document.createElement('br'));
+      cammodel.appendChild(lable);
+      cammodel.appendChild(document.createElement('br'));
+      cammodel.appendChild(linkElement);
+
+      cammodel.appendChild(document.createElement('br'));
+      num = num+1;
+    })
+
+        
+      
+    //   var dorks = [
+    //     'site:' + domain + ' inurl:&',
+    //     'site:.s3.amazonaws.com "'+domain+'"',
+    //     'site:stackoverflow.com "'+domain+'"',
+    //     'link:' + domain,
+    //     'site:*.'+ domain,
+    //     'site:*.*.'+ domain,
+    //     'site:*<'+ domain + '>*',
+    //     'site:'+ domain + '>*',
+    //     'site:*<'+ domain + '.*>*',
+    //     'site:*<*'+ domain + '.*>*',
+    //     'site:*'+ domain + '.*',
+    //     'site:'+ domain + ' ip:127.0.0.1',
+
+    //   ];
+
+
+
+     
+
+      
+     
+    }
+    updateSearchQuery()
+  </script>
+</body>
