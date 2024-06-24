@@ -46,7 +46,7 @@ def main():
             # Check GET requests with payloads
             for payload in progress_bar:
                 url = f"{base_url}&{param}={payload}"
-                response = requests.get(url, headers=headers, proxies=proxies)
+                response = requests.get(url, headers=headers)
                 
                 if any(keyword in response.text for keyword in keywords):
                     found_any = True
@@ -76,7 +76,7 @@ def main():
                 response = requests.post(base_url, headers=headers, data=data)
                 
                 if any(keyword in response.text for keyword in keywords):
-                    found_any = True
+                    found_any = Trueprox
                     found_urls.append(f"POST: {data}")
                     progress_bar.set_postfix(found="YES", refresh=True)
                     progress_bar.set_description(f"Found {param}", refresh=True)
