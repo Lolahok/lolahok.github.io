@@ -22,11 +22,6 @@ def main():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
     }
     
-    proxies = {
-        "http": "http://127.0.0.1:8080",
-        "https": "http://127.0.0.1:8080"
-    }
-    
     payloads = [
         "nexiz%22", "nexiz%2522", 'nexiz%27', "nexiz%2527",
         "nexiz%3C", "nexiz%253C"
